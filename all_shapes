@@ -1,0 +1,138 @@
+package com.codewithharry.shape;
+import java.util.*;
+class reactangle {
+    int lenght4;
+    int b1;
+k
+    public int getLenght4() {
+return lenght4;
+
+    }
+    public void setLenght4(int length4){
+        this.lenght4 = length4;
+    }
+
+    public int getB1(){
+        return b1;
+
+    }
+    public void setB1(int b1){
+        this.b1= b1;
+
+    }
+    public int perimeter(){
+        return 2*(lenght4 + b1);
+
+    }
+}
+class square extends reactangle{
+    double side;
+//    public int length;
+//    public int breadth;
+// super(length , bredth); 
+
+    public double getside(){
+        return side;
+    }
+    public void setside(double side){
+        this.side= side;
+    }
+    public double per(){
+    return 4 * side;
+
+    }
+}
+class circle extends square {
+    int radius;
+    public int side;
+
+    public int getradius() {
+        return radius;
+    }
+
+    public void setradius(int radius) {
+        this.radius = radius;
+    }
+    public double area() {
+        return Math.PI * radius * radius;
+    }
+    public double volume () {
+        double v = (1.33) * Math.PI * radius * radius * radius;
+        return v;
+    }
+}
+
+
+    class cylinder extends circle {
+        int height;
+        int radius1;
+
+        public int getheight() {
+            return height;
+        }
+
+        public void setheight(int height) {
+            this.height = height;
+        }
+
+        public int getradius1() {
+            return radius1;
+        }
+
+        public void setradius1(int radius1) {
+            this.radius1 = radius1;
+        }
+
+        public double surfacearea() {
+            return 2 * Math.PI * radius1 * (height + radius1);
+        }
+
+        public double volume2() {
+            return Math.PI*radius1 *radius1*height;
+        }
+    }
+        public class codewithharryshapes {
+            public static void main(String args[]) {
+                cylinder cy = new cylinder();
+
+                Scanner sc = new Scanner(System.in);
+                int a;
+
+                System.out.println("1. for reactangle ");
+                System.out.println("2. for square ");
+                System.out.println("3. for circle");
+                System.out.println("4. for cylinder");
+                System.out.println("press any one number for particular operation\n: ");
+                a = sc.nextInt();
+                switch(a){
+                    case 1 :
+                        System.out.println("eneter the lenegth of reactangle: ");
+                       cy.lenght4= sc.nextInt();
+                        System.out.println("eneter the breadth of reactangle:");
+                        cy.b1= sc.nextInt();
+                        System.out.println("the perimeter of the reactangle is: " + cy.perimeter());
+                        break ;
+                    case 2 :
+                        System.out.println("enter the side of square:");
+                        cy.side = sc.nextInt();
+                        System.out.println("the perimeter of the square is: " +cy.per());
+                        break;
+                    case 3:
+                        System.out.println("eneter the radius of the circle:");
+                        cy.radius= sc.nextInt();
+                        System.out.println("area: " + cy.area());
+                        System.out.println("volume : "+ cy.volume());
+                        break;
+                    case 4:
+                        System.out.println("eneter the radius of cylinder:");
+                        cy.radius1 = sc.nextInt();
+                        System.out.println("eneter the height of the cylinder:");
+                        cy.height= sc.nextInt();
+                        System.out.println("the surface area of cylinder is: "+ cy.surfacearea());
+                        System.out.println("the volume of the sylinnnder is :"+ cy.volume2());
+                        break;
+                    default:
+                        System.out.println("plese eneter a valid number");
+                }
+            }
+        }
